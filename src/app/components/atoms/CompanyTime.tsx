@@ -3,7 +3,7 @@ import { getCompactDuration } from "@/utils/date";
 
 interface CompanyTimeProps {
   start: string;
-  end: string;
+  end?: string;
   className?: string;
 }
 

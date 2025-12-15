@@ -24,10 +24,13 @@ export default function Timeline({ items }: TimelineProps) {
 
       <div className="flex flex-col gap-20 relative z-10">
         {items.map(({ component }, index) => {
+          const isEven = index % 2 === 0;
+          const isLeft = isEven; // First item (index 0) is left, second (index 1) is right, etc.
+          
           return (
             <div
               key={index}
-              className="flex flex-col sm:flex-row w-full sm:items-start sm:justify-between group"
+              className="relative w-full group"
             >
               <AnimatedComponent
                 HTMLtag="div"
@@ -38,14 +41,17 @@ export default function Timeline({ items }: TimelineProps) {
                   'group-hover:drop-shadow-[0_0_4px_#ffffff] transition-all duration-200'
                 )}
               />
-              <>
-                <AnimatedComponent
-                  HTMLtag="div"
-                  className="order-2 sm:order-1 w-full sm:w-1/2 sm:pr-4 flex flex-col sm:flex-row justify-end"
-                >
-                  {component}
-                </AnimatedComponent>
-              </>
+              <AnimatedComponent
+                HTMLtag="div"
+                className={mergeClassNames(
+                  "w-full sm:w-1/2",
+                  isLeft 
+                    ? "sm:pr-4 sm:ml-0" 
+                    : "sm:pl-4 sm:ml-auto"
+                )}
+              >
+                {component}
+              </AnimatedComponent>
             </div>
           )
         })}
