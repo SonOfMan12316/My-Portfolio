@@ -1,26 +1,32 @@
 "use client";
-import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 export default function Loading() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const enterTimeout = setTimeout(() => {
-      setVisible(true);
-    }, 100);
-
-    return () => {
-      clearTimeout(enterTimeout);
-    };
-  }, []);
-
   return (
-    <div
-      className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-500 ${
-        visible ? "opacity-100" : "opacity-0"
-      } bg-black/60 backdrop-blur-md`}
-    >
-      <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin" />
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/80 backdrop-blur-md">
+      <div className="flex gap-2">
+        {[0, 1, 2].map((i) => (
+          <motion.div
+            key={i}
+            className="w-3 h-3 bg-[#ffae23] rounded-full"
+            initial={{
+              scale: 1,
+              opacity: 0.5,
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: 0.6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.15,
+              times: [0, 0.5, 1],
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
