@@ -21,10 +21,22 @@ export const formatedDate = (currentDate: string) => {
 
 export const getCompactDuration = (
   startStr: string,
-  endStr: string
+  endStr?: string
 ): string => {
   const [, startMonth, startYear] = startStr.split('/').map(Number)
-  const [, endMonth, endYear] = endStr.split('/').map(Number)
+  
+  let endMonth: number
+  let endYear: number
+  
+  if (!endStr || endStr.trim() === '') {
+    const now = new Date()
+    endMonth = now.getMonth() + 1
+    endYear = now.getFullYear()
+  } else {
+    const [, month, year] = endStr.split('/').map(Number)
+    endMonth = month
+    endYear = year
+  }
 
   const totalStartMonths = startYear * 12 + (startMonth - 1)
   const totalEndMonths = endYear * 12 + (endMonth - 1)

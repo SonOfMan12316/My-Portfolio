@@ -42,7 +42,7 @@ export default function Balloon({
           <div className="flex flex-col sm:flex-row gap-3 items-baseline mt-2 sm:mt-4">
             <Tag className="order-2 sm:order-1">{role}</Tag>
 
-            {dateStart && dateEnd && (
+            {dateStart && (
               <CompanyTime
                 start={dateStart}
                 end={dateEnd}
