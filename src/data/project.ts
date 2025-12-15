@@ -8,6 +8,34 @@ export interface ProjectInterface {
 
 export const projects = [
   {
+    title: 'Clohea Admin Portal',
+    about: 'Healthcare webapp to manage staffs, groups, verify staffs and more',
+    technologies: [
+      'Vue3',
+      'VueX',
+      'Bootstrap',
+      'Typescript',
+    ],
+    image: '/projects/clohea-admin-portal.webp',
+    link: 'https://adminportal.dev.clohea.com/',
+    categories: ['Live projects without NDA'],
+  },
+  {
+    title: 'Bookmark Manager',
+    about: 'Bookmark Manager helps you keep  keep of sites you wish to go back to, add, edit, archive or delete your bookmarks',
+    technologies: [
+      'React',
+      'Next',
+      'Tailwind',
+      'Typescript',
+      'Nest',
+      'SQL',
+    ],
+    image: '/projects/bookmark-manager.webp',
+    link: 'https://bookmark-manager-woad.vercel.app',
+    categories: ['personal'],
+  },
+  {
     title: 'Finance Tracker',
     about: `Personal finance app track your budgets, pots, transactions and recurring bills(in-view).
     `,

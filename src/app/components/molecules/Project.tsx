@@ -4,7 +4,7 @@ import Image from "next/image";
 import AnimatedComponent from "./AnimatedComponent";
 import ProjectHeader from "../atoms/ProjectHeader";
 
-export type Category = "personal" | "freelancer" | "probono";
+export type Category = "personal" | "freelancer" | "live projects without NDA";
 
 export interface ProjectProps {
   className?: string;
@@ -29,7 +29,7 @@ export default function Project({
     <AnimatedComponent
       HTMLtag="div"
       className={mergeClassNames(
-        "relative w-full min-h-60 sm:min-h-96 group rounded-b-2xl",
+        "relative w-full min-h-60 sm:min-h-96 group rounded-b-2xl cursor-pointer",
         className
       )}
     >
@@ -39,27 +39,26 @@ export default function Project({
         link={link}
       />
 
-      <div className="relative w-full h-60 sm:h-96 overflow-hidden rounded-b-2xl bg-[var(--color-background)]">
+      <div className="relative w-full h-60 sm:h-96 overflow-hidden rounded-b-2xl bg-[var(--color-background)] flex items-center justify-center">
         <Image
           src={image}
           alt={title}
           fill
-          sizes="auto"
           className={mergeClassNames(
-            "object-cover group-hover:scale-110",
-            "transition-transform rounded-b-2xl"
+            "object-contain object-center sm:group-hover:scale-110",
+            "transition-transform duration-300 rounded-b-2xl"
           )}
         />
 
         <div
           className={mergeClassNames(
-            "absolute top-0 left-0 opacity-100 sm:opacity-0",
-            "flex flex-col gap-2 sm:gap-4 justify-between bg-[var(--color-background)]/90 sm:bg-stone-800",
+            "absolute top-0 left-0 sm:opacity-0",
+            "flex flex-col gap-2 sm:gap-4 justify-between  sm:bg-stone-800",
             "w-full h-full p-4 sm:p-4 rounded-b-2xl",
             "sm:group-hover:opacity-100 transition-opacity duration-400"
           )}
         >
-          <div>
+          <div className="hidden sm:block">
             <div className="flex justify-between items-start">
               <h3 className="text-base sm:text-lg text-[var(--action)] font-semibold sm:font-bold max-w-[65%]">
                 {title}
@@ -71,7 +70,7 @@ export default function Project({
             </p>
           </div>
 
-          <div className="flex gap-2 sm:gap-4 flex-wrap">
+          <div className="sm:flex gap-2 sm:gap-4 flex-wrap hidden">
             {technologies.map((item, index) => (
               <Tag key={index}>{item}</Tag>
             ))}

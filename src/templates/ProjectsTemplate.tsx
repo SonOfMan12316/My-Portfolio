@@ -35,8 +35,7 @@ export default function ProjectsTemplate() {
       options: [
         { label: "All", value: "" },
         { label: "Personal", value: "personal" },
-        { label: "Freelancer", value: "freelancer" },
-        { label: "Pro bono", value: "probono" },
+        { label: "Live projects without NDA", value: "Live projects without NDA" },
       ],
     },
     {

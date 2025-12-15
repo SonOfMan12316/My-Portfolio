@@ -23,7 +23,7 @@ export default function ProjectsSection() {
             A reflection of my <HighlightText>Growth</HighlightText> and{' '}
             <HighlightText>Passion. </HighlightText>
             <br />
-            NDAs prevent live project demos, so here`&apos;s a peek at my
+            NDAs prevent live project demos, so here&apos;s a peek at my
             personal work
           </>
         }
