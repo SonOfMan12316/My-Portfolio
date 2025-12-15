@@ -9,7 +9,7 @@ import { mergeClassNames } from '@/utils/classNames'
 import NavigationButton from '../atoms/NavigationButton'
 
 export default function CoverSection() {
-  const cvFileName = 'Emanyo_Charles_CV.pdf'
+  const cvFileName = 'Emanyo Charles CV.pdf'
   const cvFilePath = `/files/${cvFileName}`
 
   return (
