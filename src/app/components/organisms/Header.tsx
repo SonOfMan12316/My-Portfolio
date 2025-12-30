@@ -12,9 +12,9 @@ export default function Header() {
       slideUp
     >
       <PageTemplate>
-        <div className="flex items-center justify-between h-16 select-none mx-4">
+        <div className="flex items-center justify-between h-16 select-none mx-4 lg:mx-8">
           <Logo />
-          <NavigationTabs className="hidden sm:inline" />
+          <NavigationTabs className="hidden lg:inline" />
           <Menu />
         </div>
       </PageTemplate>

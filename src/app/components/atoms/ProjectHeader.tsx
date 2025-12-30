@@ -24,7 +24,7 @@ export default function ProjectHeader({
         {categories?.map((category, index) => (
           <Tag
             key={index}
-            className="border-none text-sm sm:text-base hover:bg-transparent bg-transparent text-gray-200 font-normal"
+            className="border-none text-sm md:text-base hover:bg-transparent bg-transparent text-gray-200 font-normal"
           >
             {category}
           </Tag>

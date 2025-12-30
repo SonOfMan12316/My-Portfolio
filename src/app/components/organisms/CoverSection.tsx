@@ -9,7 +9,7 @@ import { mergeClassNames } from '@/utils/classNames'
 import NavigationButton from '../atoms/NavigationButton'
 
 export default function CoverSection() {
-  const cvFileName = 'Emanyo Charles CV.pdf'
+  const cvFileName = 'Charles Emanyo CV.pdf'
   const cvFilePath = `/files/${cvFileName}`
 
   return (
@@ -20,7 +20,7 @@ export default function CoverSection() {
         isTranparentBackgroud
         noPaddingInline
       >
-        <div className="flex flex-col justify-center mx-4">
+        <div className="flex flex-col justify-center mx-4 lg:mx-8">
           <div className="flex sm:flex-row sm:justify-between flex-col items-center">
             <div className="flex flex-col items gap-6 sm:block w-full sm:w-auto pt-10 sm:pt-0">
               <div className="flex flex-col select-none items-center sm:items-start">

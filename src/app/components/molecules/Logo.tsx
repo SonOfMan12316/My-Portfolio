@@ -21,7 +21,7 @@ export default function Logo() {
     >
       <span className="opacity-20">{'<'}</span>
       <span className="mix-blend-difference text-[var(--color-foreground)]">
-        Emanyo Charles
+        Charles Emanyo
       </span>
       <span>
         <span className="opacity-20">{'/'}</span>
