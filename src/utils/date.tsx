@@ -23,24 +23,31 @@ export const getCompactDuration = (
   startStr: string,
   endStr?: string
 ): string => {
-  const [, startMonth, startYear] = startStr.split('/').map(Number)
-  
+  const [startDay, startMonth, startYear] = startStr.split('/').map(Number)
+
+  let endDay: number
   let endMonth: number
   let endYear: number
-  
+
   if (!endStr || endStr.trim() === '') {
     const now = new Date()
+    endDay = now.getDate()
     endMonth = now.getMonth() + 1
     endYear = now.getFullYear()
   } else {
-    const [, month, year] = endStr.split('/').map(Number)
+    const [day, month, year] = endStr.split('/').map(Number)
+    endDay = day
     endMonth = month
     endYear = year
   }
 
-  const totalStartMonths = startYear * 12 + (startMonth - 1)
-  const totalEndMonths = endYear * 12 + (endMonth - 1)
-  const diff = totalEndMonths - totalStartMonths
+  let diff = (endYear - startYear) * 12 + (endMonth - startMonth)
+
+  if (endDay < startDay) {
+    diff -= 1
+  }
+
+  diff = Math.max(0, diff)
 
   const years = Math.floor(diff / 12)
   const months = diff % 12
