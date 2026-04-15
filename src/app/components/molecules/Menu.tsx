@@ -61,7 +61,7 @@ export default function Menu() {
         onClick={handleToggle}
         disabled={isAnimating || isOpen}
         variant="secondary"
-        className="lg:hidden w-12 bg-transparent text-[var(--action)]"
+        className="lg:hidden w-12 bg-transparent text-[var(--action)] border-none"
         disableAnimation
       >
         <AnimatePresence mode="wait" initial={false}>

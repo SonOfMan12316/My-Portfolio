@@ -34,8 +34,9 @@ export default function ProjectsTemplate() {
       key: "categories",
       options: [
         { label: "All", value: "" },
-        { label: "Personal", value: "personal" },
-        { label: "Live projects without NDA", value: "Live projects without NDA" },
+        { label: "Featured", value: "Featured" },
+        { label: "Production", value: "Production" },
+        { label: "Product", value: "Product" },
       ],
     },
     {

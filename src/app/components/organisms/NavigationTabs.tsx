@@ -8,9 +8,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 
 export const NAVIGATION_TAB_INDEX: Record<string, string> = {
   HOME: 'home',
-  PROJECTS: 'projects',
-  EXPERIENCES: 'experiences',
-  CERTIFICATION: 'certification',
+  WORK: 'projects',
+  ABOUT: 'about',
   CONTACT: 'contact',
 }
 
@@ -20,9 +19,8 @@ export const scrollIntoSection = (id: string) => {
 
 const tabsList = [
   { id: NAVIGATION_TAB_INDEX.HOME, label: 'Home' },
-  { id: NAVIGATION_TAB_INDEX.PROJECTS, label: 'Projects' },
-  { id: NAVIGATION_TAB_INDEX.EXPERIENCES, label: 'Experiences' },
-  { id: NAVIGATION_TAB_INDEX.CERTIFICATION, label: 'Certifications' },
+  { id: NAVIGATION_TAB_INDEX.WORK, label: 'Work' },
+  { id: NAVIGATION_TAB_INDEX.ABOUT, label: 'About' },
   { id: NAVIGATION_TAB_INDEX.CONTACT, label: 'Contact' },
 ]
 
@@ -84,10 +82,10 @@ export default function NavigationTabs({
             handleClick(tab.id)
           }}
           className={mergeClassNames(
-            'relative pb-1 transition-colors hover:text-white',
+            'relative pb-1 text-sm tracking-wide transition-colors hover:text-white',
             activeTab === tab.id
               ? 'text-[var(--color-foreground)]'
-              : 'text-[var(--color-foreground)]/40',
+              : 'text-[var(--color-foreground)]/55',
             isWithinMenu
               ? 'text-xl mr-6 hover:text-[var(--color-foreground)]/40'
               : ''
@@ -98,7 +96,7 @@ export default function NavigationTabs({
       ))}
       {!isWithinMenu && (
         <motion.div
-          className="absolute -bottom-0.5 h-[2px] bg-[var(--action)] rounded"
+          className="absolute -bottom-0.5 h-[1px] bg-[var(--action)]/70 rounded"
           animate={{ left: underlineProps.left, width: underlineProps.width }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         />

@@ -17,9 +17,9 @@ export interface ButtonProps
 
 const buttonVariants = {
   primary:
-    "bg-[var(--action)] text-[var(--color-background)] hover:enabled:bg-[var(--action)]/80",
+    "bg-[var(--action)] text-[var(--color-background)] hover:enabled:bg-[var(--action)]/85",
   secondary:
-    "bg-[var(--color-background)] text-gray-200 hover:enabled:bg-gray-200/20",
+    "bg-transparent border border-gray-200/25 text-gray-100 hover:enabled:bg-white/10 hover:enabled:border-gray-200/45",
 };
 
 const isLodingVariants = {
@@ -28,8 +28,8 @@ const isLodingVariants = {
 };
 
 const sizeVariants = {
-  small: "px-2 py-1 gap-2",
-  normal: "px-4 py-2 gap-4",
+  small: "px-3 py-2 gap-2",
+  normal: "px-5 py-3 gap-3",
 };
 
 export default function Button({
@@ -46,10 +46,10 @@ export default function Button({
   const componentClasses = [
     "flex relative inline-flex justify-center items-center",
     sizeVariants[size],
-    "text-sm font-medium",
-    "transition-colors duration-200 cursor-pointer",
+    "text-sm sm:text-base font-semibold",
+    "transition-all duration-250 cursor-pointer",
     "disabled:cursor-not-allowed",
-    "rounded-sm",
+    "rounded-lg",
     isFull ? "w-full" : "",
     shadow ? "shadow-md" : "",
     variant ? buttonVariants[variant] : "",

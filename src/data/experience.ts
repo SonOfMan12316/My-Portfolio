@@ -26,7 +26,7 @@ export const experiences: ExperienceInterface[] = [
     role: 'Backend Engineer',
     type: 'full-time',
     description:
-      'Collaborated closely with front-end engineers, back-end engineers, QA teams, and project managers to successfully execute the full software development life cycle, ensuring timely delivery of high-quality web solutions.',
+      'Joined as the backend engineer on a React application now serving 5,000+ active users. Owned API architecture, Redis caching strategy, email infrastructure migration, and Swagger documentation - reducing frontend integration time by 40% and API response times by 45%.',
     achievements: [
       'Collaborated with frontend engineers to build APIs serving React application with 5,000+ users, maintaining 90% test coverage and comprehensive Swagger documentation',
       'Implemented Redis caching reducing API response times by 45%, directly improving frontend load times and user experience',

@@ -86,7 +86,7 @@ export default function Modal({
           <Button
             onClick={onClose}
             variant="secondary"
-            className="w-12 bg-transparent mt-2 mr-4 text-[var(--action)]"
+            className="w-12 bg-transparent mt-2 mr-4 text-[var(--action)] border-none"
             disableAnimation
           >
             <AnimatePresence mode="wait" initial={false}>

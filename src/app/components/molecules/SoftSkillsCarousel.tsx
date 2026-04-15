@@ -1,12 +1,16 @@
 import React from 'react'
 import Carousel from './Carousel'
 import SoftSkill from '../atoms/SoftSkill'
-import DATA from '@/data'
+
+const softSkills = [
+  'Communication',
+  'Teamwork',
+  'Problem-solving',
+  'Open-mindedness',
+]
 
 export default function SoftSkillsCarousel() {
-  const listItems = DATA.softSkills
-
-  const listNode = listItems.map((item, index) => (
+  const listNode = softSkills.map((item, index) => (
     <SoftSkill
       key={index}
       label={item}

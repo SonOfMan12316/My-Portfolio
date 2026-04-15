@@ -1,19 +1,18 @@
-import { mergeClassNames } from "@/utils/classNames";
-import Tag from "../atoms/Tag";
-import Image from "next/image";
-import AnimatedComponent from "./AnimatedComponent";
-import ProjectHeader from "../atoms/ProjectHeader";
-
-export type Category = "personal" | "freelancer" | "live projects without NDA";
+import { mergeClassNames } from '@/utils/classNames'
+import Tag from '../atoms/Tag'
+import Image from 'next/image'
+import AnimatedComponent from './AnimatedComponent'
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
 
 export interface ProjectProps {
-  className?: string;
-  title: string;
-  about: string;
-  technologies: Array<string>;
-  image: string;
-  link: string;
-  categories?: Array<Category>;
+  className?: string
+  title: string
+  about: string
+  technologies: Array<string>
+  image: string
+  link: string
+  categories?: Array<string>
+  featured?: boolean
 }
 
 export default function Project({
@@ -24,59 +23,70 @@ export default function Project({
   image,
   link,
   categories,
+  featured = false,
 }: ProjectProps) {
   return (
     <AnimatedComponent
-      HTMLtag="div"
+      HTMLtag="a"
+      href={link}
+      target="_blank"
+      rel="noreferrer"
       className={mergeClassNames(
-        "relative w-full min-h-60 sm:min-h-96 group rounded-b-2xl cursor-pointer",
+        'group rounded-2xl border border-gray-100/10 bg-[var(--surface-muted)]/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--action)]/60',
         className
       )}
     >
-      <ProjectHeader
-        className="rounded-t-2xl"
-        categories={categories}
-        link={link}
-      />
-
-      <div className="relative w-full h-60 sm:h-96 overflow-hidden rounded-b-2xl bg-[var(--color-background)] flex items-center justify-center">
+      <div className="relative h-56 sm:h-64 overflow-hidden rounded-t-2xl">
         <Image
           src={image}
           alt={title}
           fill
-          className={mergeClassNames(
-            "object-contain object-center sm:group-hover:scale-110",
-            "transition-transform duration-300 rounded-b-2xl"
-          )}
+          className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
         />
+      </div>
 
-        <div
-          className={mergeClassNames(
-            "absolute top-0 left-0 sm:opacity-0",
-            "flex flex-col gap-2 sm:gap-4 justify-between  sm:bg-stone-800",
-            "w-full h-full p-4 sm:p-4 rounded-b-2xl",
-            "sm:group-hover:opacity-100 transition-opacity duration-400"
-          )}
-        >
-          <div className="hidden sm:block">
-            <div className="flex justify-between items-start">
-              <h3 className="text-base sm:text-lg text-[var(--action)] font-semibold sm:font-bold max-w-[65%]">
-                {title}
-              </h3>
-            </div>
-
-            <p className="text-xs sm:text-base font-normal text-justify pt-2 sm:pt-4 mx-auto">
-              {about}
-            </p>
-          </div>
-
-          <div className="sm:flex gap-2 sm:gap-4 flex-wrap hidden">
-            {technologies.map((item, index) => (
-              <Tag key={index}>{item}</Tag>
-            ))}
+      <div className="p-4 sm:p-6">
+        <div className="flex items-start justify-between gap-3 pb-3">
+          <h3 className="text-lg sm:text-2xl font-semibold text-gray-100 pr-3">
+            {title}
+          </h3>
+          <div className="flex items-center gap-3 shrink-0">
+            {featured && (
+              <span className="rounded-full border border-[var(--action)]/60 bg-[var(--action)]/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--action)]">
+                Featured
+              </span>
+            )}
+            <FaArrowUpRightFromSquare
+              size={16}
+              className="text-current group-hover:text-[var(--action)] transition-colors"
+            />
           </div>
         </div>
+
+        <p className="text-sm sm:text-base leading-7 text-gray-200/85 max-w-2xl">
+          {about}
+        </p>
+
+        <div className="flex gap-2 sm:gap-3 flex-wrap pt-4">
+          {technologies.map((item, index) => (
+            <Tag key={index}>{item}</Tag>
+          ))}
+        </div>
+
+        {categories?.length ? (
+          <div className="flex gap-2 flex-wrap pt-3">
+            {categories.map((category, index) => (
+              <Tag
+                key={index}
+                className="border-none bg-white/5 text-xs text-gray-300 hover:bg-white/10"
+              >
+                {category}
+              </Tag>
+            ))}
+          </div>
+        ) : null}
+
       </div>
     </AnimatedComponent>
-  );
+  )
 }

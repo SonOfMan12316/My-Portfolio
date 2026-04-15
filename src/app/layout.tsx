@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | Emanyo Charles',
   },
   description:
-    'Software Engineer specialized in Vue, React, Next.js TypeScript, Tailwind, Node.js, Nest.js and Firebase. I transform ideas into modern, accessible, and high-performance digital experiences.',
+    'Software Engineer with 5 years of experience shipping production-grade web applications across React, Next.js, NestJS, and Node. I build products that scale from pixel-perfect UIs to reliable APIs.',
   authors: [
     { name: 'Emanyo Charles', url: 'https://emanyo-charles.vercel.app/' },
   ],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title:
       'Emanyo Charles - Software Engineer',
     description:
-      'Software Engineer specialized in Vue, React, Next.js TypeScript, Tailwind, Node.js, Nest.js and Firebase. I transform ideas into modern, accessible, and high-performance digital experiences.',
+      'Software Engineer with 5 years of experience shipping production-grade web applications across React, Next.js, NestJS, and Node. I build products that scale from pixel-perfect UIs to reliable APIs.',
     url: 'https://emanyo-charles.vercel.app/',
     siteName: 'Emanyo Charles',
     locale: 'en_US',

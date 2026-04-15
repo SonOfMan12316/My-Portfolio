@@ -1,12 +1,8 @@
 import ProjectsPreview from './ProjectsPreview'
-import RouterButton from '../atoms/RouterButton'
 import TitleAndSubtitleSection from '../molecules/TitleAndSubtitleSection'
 import SectionTemplate from '@/templates/SectionTemplate'
 import DATA from '@/data'
-import { FaArrowRight } from 'react-icons/fa6'
 import HighlightText from '../atoms/HighlightText'
-
-const MAX_CARDS = 6
 
 export default function ProjectsSection() {
   const projects = DATA.projects
@@ -14,33 +10,22 @@ export default function ProjectsSection() {
   return (
     <SectionTemplate
       id="projects"
-      className="flex flex-col items-center sm:rounded-t-2xl"
+      className="flex flex-col items-center pt-10 sm:pt-14"
     >
-      <TitleAndSubtitleSection
-        title="Projects"
-        subtitle={
-          <>
-            A reflection of my <HighlightText>Growth</HighlightText> and{' '}
-            <HighlightText>Passion. </HighlightText>
-            <br />
-            NDAs prevent live project demos, so here&apos;s a peek at my
-            personal work
-          </>
-        }
-      >
-        <ProjectsPreview projects={projects} />
-      </TitleAndSubtitleSection>
-
-      {projects.length > MAX_CARDS && (
-        <RouterButton
-          path="projects"
-          variant="primary"
-          className="max-w-48 mt-20 sm:mt-0"
+      <div className="w-full mx-auto max-w-[1160px]">
+        <TitleAndSubtitleSection
+          title="Selected Work"
+          subtitle={
+            <>
+              A focused set of projects that show how I approach product
+              problems, technical architecture, and delivery in{' '}
+              <HighlightText>production</HighlightText>.
+            </>
+          }
         >
-          See all projects
-          <FaArrowRight className="animate-arrow-bounce" size={18} />
-        </RouterButton>
-      )}
+          <ProjectsPreview projects={projects} />
+        </TitleAndSubtitleSection>
+      </div>
     </SectionTemplate>
   )
 }

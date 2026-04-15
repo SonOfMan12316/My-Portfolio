@@ -4,12 +4,15 @@ export interface ProjectInterface {
   technologies: Array<string>
   image: string
   link: string
+  categories: Array<string>
+  featured?: boolean
 }
 
 export const projects = [
   {
     title: 'Clohea Admin Portal',
-    about: 'Healthcare webapp to manage staffs, groups, verify staffs and more',
+    about:
+      'Built for a healthcare company managing staff, groups, and practitioner verification across an organization. The challenge was handling complex role-based permissions while keeping the UI intuitive for non-technical admin staff. Built with Vue 3, VueX, and TypeScript, focused on component reusability and clean state management.',
     technologies: [
       'Vue3',
       'VueX',
@@ -17,12 +20,14 @@ export const projects = [
       'Typescript',
     ],
     image: '/projects/clohea-admin-portal.webp',
-    link: 'https://adminportal.dev.clohea.com/',
-    categories: ['Live projects without NDA'],
+    link: 'http://adminportal.staging.clohea.com/',
+    categories: ['Featured', 'Production'],
+    featured: true,
   },
   {
     title: 'Bookmark Manager',
-    about: 'Bookmark Manager helps you keep  keep of sites you wish to go back to, add, edit, archive or delete your bookmarks',
+    about:
+      'A full-stack productivity tool with authentication, built to scratch my own itch. Users can add, edit, archive, and delete bookmarks across sessions. Built with React, Next.js, NestJS, and SQL, this was my playground for getting serious about backend integration, database design, and auth flows end to end.',
     technologies: [
       'React',
       'Next',
@@ -33,12 +38,13 @@ export const projects = [
     ],
     image: '/projects/bookmark-manager.webp',
     link: 'https://bookmark-manager-woad.vercel.app',
-    categories: ['personal'],
+    categories: ['Product'],
+    featured: false,
   },
   {
     title: 'Finance Tracker',
-    about: `Personal finance app track your budgets, pots, transactions and recurring bills(in-view).
-    `,
+    about:
+      'Personal finance app for tracking budgets, pots, and transactions in real time. The goal was to make financial data feel less intimidating through clean UI and clear data visualization. Built with React, Zustand for state, Firebase for backend, and TypeScript throughout.',
     technologies: [
       'React',
       'Vite',
@@ -49,63 +55,17 @@ export const projects = [
     ],
     image: '/projects/finance-tracker.webp',
     link: 'https://mancy-finance-tracker.vercel.app',
-    categories: ['personal'],
+    categories: ['Product'],
+    featured: false,
   },
   {
-    title: 'Weather Now',
-    about: `A responsive weather app with search functionality, unit conversion, and detailed forecasts using the Open-Meteo API. `,
-    technologies: ['React', 'Vite', 'Typescript', 'Open Meteo API', 'Tailwind'],
-    image: '/projects/weather.webp',
-    link: 'https://weather-now-hackathon.vercel.app/',
-    categories: ['personal'],
-  },
-  {
-    title: 'Create your custom chill-guy',
-    about: `Create your custom chill guy meme. You can customize the text, colors, and accessories to make it your own. Once you're done, you can download or copy your creation as an image file.`,
+    title: 'Create Your Custom Chill Guy',
+    about:
+      'Create your custom Chill Guy meme with editable text, colors, and accessories, then copy or download the final image. Built as a playful UI product focused on fast interactions and clean client-side rendering.',
     technologies: ['React', 'Vite', 'Typescript', 'Tailwind', 'Html2canvas'],
     image: '/projects/chill_guy.webp',
-    link: 'https://create-your-chill-guy-meme.vercel.app/',
-    categories: ['personal'],
-  },
-  {
-    title: 'Password Strength Checker',
-    about: `A password strength checker that evaluates the strength of your password based on length, character variety, and common patterns. It provides real-time feedback and suggestions to help you create a stronger password.`,
-    technologies: [
-      'React',
-      'Vite',
-      'Jest',
-      'i18next',
-      'Jest',
-      'Redux',
-      'Zustand',
-    ],
-    image: '/projects/password.webp',
-    link: 'https://ikue-password-strength-checker.netlify.app/',
-    categories: ['personal'],
-  },
-
-  {
-    title: 'Covenant Connect Website',
-    about: `A church website built to submit attendance for an event, view sermons, and read articles. Other features include a contact form, location map, and social media links. Some are still in development.`,
-    technologies: [
-      'React',
-      'Tailwind',
-      'Typescript',
-      'Zustand',
-      'Zod',
-      'i18next',
-    ],
-    image: '/projects/covenant.webp',
-    link: 'https://covenant-connect.com/',
-    categories: ['Open Source'],
-  },
-  {
-    title: 'Phonebook Contact App',
-    about:
-      'Personal project to practice redux state management and get the basic concept.',
-    technologies: ['React', 'Vite', 'Redux', 'yup'],
-    image: '/projects/phonebook.webp',
-    link: 'https://sonofman-phonebook-contact.vercel.app/',
-    categories: ['personal'],
+    link: 'https://create-your-chill-guy-meme.vercel.app',
+    categories: ['Product'],
+    featured: false,
   },
 ]

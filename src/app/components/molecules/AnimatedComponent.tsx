@@ -36,13 +36,13 @@ export default function AnimatedComponent({
 
   const motionProps = slideUp
     ? {
-        initial: { opacity: 0, y: -60 },
+        initial: { opacity: 0, y: -32 },
         animate: shouldAnimate ? { opacity: 1, y: 0 } : undefined,
         ...motionDefaultProps,
       }
     : {
-        initial: { opacity: 0, y: 40, scale: 0.8 },
-        animate: shouldAnimate ? { opacity: 1, y: 0, scale: 1 } : undefined,
+        initial: { opacity: 0, y: 28 },
+        animate: shouldAnimate ? { opacity: 1, y: 0 } : undefined,
         ...motionDefaultProps,
       };
 

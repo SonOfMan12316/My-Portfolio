@@ -18,8 +18,8 @@ export default function SectionTemplate({
   return (
     <div
       className={mergeClassNames(
-        "min-h-screen w-full pt-16 pb-8",
-        noPaddingInline ? "" : "px-4 lg:px-8",
+        "w-full pt-24 pb-16 sm:pt-28 sm:pb-20 scroll-mt-24",
+        noPaddingInline ? "" : "px-0 sm:px-2 lg:px-4",
         isTranparentBackgroud ? "" : "bg-[var(--color-background)]",
         className
       )}

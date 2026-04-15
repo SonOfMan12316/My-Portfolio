@@ -1,53 +1,46 @@
-import { mergeClassNames } from "@/utils/classNames";
-import { ProjectProps } from "../molecules/Project";
-import StickyStack from "../molecules/StickyStack";
-import { isEven } from "@/utils/math";
+import { mergeClassNames } from '@/utils/classNames'
+import Project, { ProjectProps } from '../molecules/Project'
 
 interface ProjectsPreviewProps {
-  projects: Array<ProjectProps>;
-  className?: string;
+  projects: Array<ProjectProps>
+  className?: string
 }
 
 export default function ProjectsPreview({
   projects,
   className,
 }: ProjectsPreviewProps) {
-  const leftStack = Array<ProjectProps>();
-  const rightStack = Array<ProjectProps>();
-
-  const currentProjects = projects.slice(0, 6);
-
-  currentProjects.forEach((project, index) =>
-    isEven(index) ? leftStack.push(project) : rightStack.push(project)
-  );
+  const featuredProject = projects.find((project) => project.featured) ?? projects[0]
+  const secondaryProjects = projects.filter(
+    (project) => project.title !== featuredProject?.title
+  )
 
   return (
     <div
       className={mergeClassNames(
-        "relative w-full flex items-center",
-        "h-[1900px] sm:h-[1480px]",
+        'relative w-full flex flex-col gap-8',
         className
       )}
     >
-      <StickyStack
-        projects={currentProjects}
-        side="middle"
-        keyPrefix="middle"
-        className="block sm:hidden"
-      />
+      {featuredProject ? (
+        <div className="w-full">
+          <h3 className="pb-4 text-sm uppercase tracking-[0.22em] text-[var(--action)]">
+            Featured Project
+          </h3>
+          <Project {...featuredProject} featured className="w-full" />
+        </div>
+      ) : null}
 
-      <StickyStack
-        projects={leftStack}
-        side="left"
-        keyPrefix="left"
-        className="hidden sm:block"
-      />
-      <StickyStack
-        projects={rightStack}
-        side="right"
-        keyPrefix="right"
-        className="hidden sm:block"
-      />
+      <div className="w-full pt-2">
+        <h3 className="pb-4 text-sm uppercase tracking-[0.22em] text-gray-300">
+          More Work
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {secondaryProjects.map((project) => (
+            <Project key={project.title} {...project} />
+          ))}
+        </div>
+      </div>
     </div>
-  );
+  )
 }

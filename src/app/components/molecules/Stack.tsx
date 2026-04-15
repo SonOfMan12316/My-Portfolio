@@ -14,22 +14,28 @@ export default function Stack({ className }: StackProps) {
     <AnimatedComponent
       HTMLtag="div"
       className={mergeClassNames(
-        'flex flex-col gap-4 items-center sm:items-start ',
+        'flex flex-col gap-5 items-center sm:items-start ',
         className
       )}
     >
-      <span className="text-base">My stack</span>
+      <span className="text-sm uppercase tracking-[0.18em] text-gray-300">
+        Core stack
+      </span>
 
-      <AnimatedComponent HTMLtag="div" className="flex gap-4">
+      <AnimatedComponent HTMLtag="div" className="flex gap-3 sm:gap-4 flex-wrap">
         {items.map(({ name }, index) => (
-          <Image
+          <div
             key={index}
-            src={`/cover/${name}.svg`}
-            alt={`${name} icon`}
-            width={40}
-            height={40}
-            priority
-          />
+            className="h-11 w-11 rounded-lg border border-white/10 bg-white/5 p-2.5"
+          >
+            <Image
+              src={`/cover/${name}.svg`}
+              alt={`${name} icon`}
+              width={24}
+              height={24}
+              priority
+            />
+          </div>
         ))}
       </AnimatedComponent>
     </AnimatedComponent>
