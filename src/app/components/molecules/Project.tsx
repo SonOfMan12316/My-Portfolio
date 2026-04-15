@@ -27,15 +27,19 @@ export default function Project({
 }: ProjectProps) {
   return (
     <AnimatedComponent
-      HTMLtag="a"
-      href={link}
-      target="_blank"
-      rel="noreferrer"
+      HTMLtag="article"
       className={mergeClassNames(
-        'group rounded-2xl border border-gray-100/10 bg-[var(--surface-muted)]/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--action)]/60',
+        'group relative rounded-2xl border border-gray-100/10 bg-[var(--surface-muted)]/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--action)]/60',
         className
       )}
     >
+      <a
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Open ${title} live demo`}
+        className="absolute inset-0 z-10 rounded-2xl"
+      />
       <div className="relative h-56 sm:h-64 overflow-hidden rounded-t-2xl">
         <Image
           src={image}
