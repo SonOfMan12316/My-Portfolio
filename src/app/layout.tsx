@@ -12,11 +12,11 @@ const poppinsSans = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Emanyo Charles - Software Engineer',
+    default: 'Emanyo Charles - Senior Frontend Engineer',
     template: '%s | Emanyo Charles',
   },
   description:
-    'Software Engineer with 5 years of experience shipping production-grade web applications across React, Next.js, NestJS, and Node. I build products that scale from pixel-perfect UIs to reliable APIs.',
+    'Senior Frontend Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
   authors: [
     { name: 'Emanyo Charles', url: 'https://emanyo-charles.vercel.app/' },
   ],
@@ -29,29 +29,27 @@ export const metadata: Metadata = {
   },
   keywords: [
     'Emanyo Charles',
-    'Frontend',
+    'Senior Frontend Engineer',
     'Software Engineer',
-    'Vue',
+    'Fullstack Engineer',
+    'Cross-platform Mobile Engineer',
     'React',
+    'TypeScript',
+    'Next.js',
+    'NestJS',
+    'Node.js',
     'Tailwind',
     'JavaScript',
-    'Next.js',
-    'Nest.js',
-    'HTML',
-    'CSS',
-    'Express',
-    'MongoBD',
-    'Firebase',
-    'Web Developer',
-    'Micro-SaaS',
-    'UI Developer',
+    'Performance Optimization',
+    'Web Applications',
+    'Product Engineering',
     'Developer Portfolio',
   ],
   openGraph: {
     title:
-      'Emanyo Charles - Software Engineer',
+      'Emanyo Charles - Senior Frontend Engineer',
     description:
-      'Software Engineer with 5 years of experience shipping production-grade web applications across React, Next.js, NestJS, and Node. I build products that scale from pixel-perfect UIs to reliable APIs.',
+      'Senior Frontend Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
     url: 'https://emanyo-charles.vercel.app/',
     siteName: 'Emanyo Charles',
     locale: 'en_US',
