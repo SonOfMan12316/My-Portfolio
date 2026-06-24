@@ -1,6 +1,6 @@
 import SectionTemplate from '@/templates/SectionTemplate'
 import Footer from './Footer'
-import { mergeClassNames } from '@/utils/classNames'
+import { mergeClassNames, PAGE_CONTAINER } from '@/utils/classNames'
 import Title from '../atoms/Title'
 import Subtitle from '../atoms/Subtitle'
 import { FaEnvelope, FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
@@ -35,7 +35,7 @@ export default function CTASection() {
         id="contact"
         className="flex flex-col justify-between min-h-0 pt-12 sm:pt-16"
       >
-        <div className="w-full mx-auto max-w-[1160px]">
+        <div className={PAGE_CONTAINER}>
           <div
             className={mergeClassNames(
               'flex flex-col items-start justify-center w-full z-30 mb-10 sm:mb-14'

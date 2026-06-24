@@ -4,6 +4,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import Title from "@/app/components/atoms/Title";
 import Subtitle from "@/app/components/atoms/Subtitle";
 import BackgroundBlur from "@/app/components/molecules/BackgroundBlur";
+import { PAGE_GUTTER } from "@/utils/classNames";
 
 interface ErrorPageTemplateProps {
   code: number;
@@ -15,7 +16,7 @@ export default function ErrorPageTemplate({
   description,
 }: ErrorPageTemplateProps) {
   return (
-    <div className="w-dvw h-dvh flex items-center justify-center">
+    <div className={`w-dvw h-dvh flex items-center justify-center ${PAGE_GUTTER}`}>
       <div className="flex flex-col items-center justify-center">
         <Title className="text-8xl">{code}</Title>
         <Subtitle className="mt-4">{description}</Subtitle>

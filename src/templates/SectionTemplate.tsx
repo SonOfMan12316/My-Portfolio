@@ -1,4 +1,4 @@
-import { mergeClassNames } from "@/utils/classNames";
+import { mergeClassNames, PAGE_GUTTER } from "@/utils/classNames";
 
 interface SectionTemplateProps {
   children: React.ReactNode;
@@ -19,7 +19,7 @@ export default function SectionTemplate({
     <div
       className={mergeClassNames(
         "w-full pt-24 pb-16 sm:pt-28 sm:pb-20 scroll-mt-24",
-        noPaddingInline ? "" : "px-0 sm:px-2 lg:px-4",
+        noPaddingInline ? "" : PAGE_GUTTER,
         isTranparentBackgroud ? "" : "bg-[var(--color-background)]",
         className
       )}

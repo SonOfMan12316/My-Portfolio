@@ -1,5 +1,6 @@
 import SectionTemplate from '@/templates/SectionTemplate'
 import Title from '@/app/components/atoms/Title'
+import { PAGE_CONTAINER } from '@/utils/classNames'
 
 export default function CoverSection() {
   return (
@@ -7,13 +8,12 @@ export default function CoverSection() {
       id="home"
       className="relative flex items-center"
       isTranparentBackgroud
-      noPaddingInline
     >
-      <div className="w-full mx-auto max-w-[1160px] px-1 sm:px-4 lg:px-0 py-4 sm:py-8">
+      <div className={`${PAGE_CONTAINER} py-4 sm:py-8`}>
         <div className="py-8 sm:py-12">
           <div className="max-w-3xl lg:pt-2">
             <p className="text-xs sm:text-sm tracking-wide text-gray-400 mb-5 sm:mb-6">
-              Senior Frontend Engineer · Fullstack & Mobile
+              Full Stack & Mobile Engineer
             </p>
             <Title className="text-left text-[clamp(2rem,9vw,4.5rem)] font-extrabold leading-[1.1] sm:leading-[1.08]">
               I build scalable React & TypeScript products used in production

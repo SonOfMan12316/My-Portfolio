@@ -3,6 +3,7 @@ import Logo from '../molecules/Logo'
 import Menu from '../molecules/Menu'
 import PageTemplate from '@/templates/PageTemplate'
 import NavigationTabs from './NavigationTabs'
+import { mergeClassNames, PAGE_CONTAINER, PAGE_GUTTER } from '@/utils/classNames'
 
 export default function Header() {
   return (
@@ -12,7 +13,13 @@ export default function Header() {
       slideUp
     >
       <PageTemplate>
-        <div className="flex items-center justify-between h-[72px] select-none mx-auto max-w-[1160px] px-1 sm:px-4 lg:px-0">
+        <div
+          className={mergeClassNames(
+            'flex items-center justify-between h-[72px] select-none',
+            PAGE_CONTAINER,
+            PAGE_GUTTER
+          )}
+        >
           <Logo />
           <NavigationTabs className="hidden lg:inline" />
           <Menu />
