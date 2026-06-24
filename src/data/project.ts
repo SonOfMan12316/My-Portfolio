@@ -6,9 +6,31 @@ export interface ProjectInterface {
   link: string
   categories: Array<string>
   featured?: boolean
+  liveOnMobile?: boolean
+  video?: string
 }
 
 export const projects = [
+  {
+    title: 'Kinnected',
+    about:
+      'A family management platform built from zero to production as the sole engineer. Kinnected gives families one private space to manage meals, tasks, shopping lists, calendars, and shared files. I owned the entire stack — NestJS backend serving 5,000+ users at 50K+ daily requests, Redis caching reducing response times by 45%, Firebase Auth, real-time push notifications, and a React Native mobile app shipped to both the Apple App Store and Google Play Store.',
+    technologies: [
+      'React Native',
+      'NestJS',
+      'TypeScript',
+      'MongoDB',
+      'Redis',
+      'Firebase',
+    ],
+    image: '/projects/kinnected.svg',
+    video:
+      'https://res.cloudinary.com/dolawuzw6/video/upload/v1782310277/Kinnected_jegccg.mp4',
+    link: '',
+    liveOnMobile: true,
+    categories: ['Featured', 'Production', 'Mobile', 'Full Stack'],
+    featured: true,
+  },
   {
     title: 'Clohea Admin Portal',
     about:
@@ -21,8 +43,8 @@ export const projects = [
     ],
     image: '/projects/clohea-admin-portal.webp',
     link: 'http://adminportal.staging.clohea.com/',
-    categories: ['Featured', 'Production'],
-    featured: true,
+    categories: ['Production', 'Web'],
+    featured: false,
   },
   {
     title: 'Bookmark Manager',
@@ -38,7 +60,7 @@ export const projects = [
     ],
     image: '/projects/bookmark-manager.webp',
     link: 'https://bookmark-manager-woad.vercel.app',
-    categories: ['Product'],
+    categories: ['Product', 'Web', 'Full Stack'],
     featured: false,
   },
   {
@@ -55,7 +77,7 @@ export const projects = [
     ],
     image: '/projects/finance-tracker.webp',
     link: 'https://mancy-finance-tracker.vercel.app',
-    categories: ['Product'],
+    categories: ['Product', 'Web', 'Full Stack'],
     featured: false,
   },
   {
@@ -65,7 +87,7 @@ export const projects = [
     technologies: ['React', 'Vite', 'Typescript', 'Tailwind', 'Html2canvas'],
     image: '/projects/chill_guy.webp',
     link: 'https://create-your-chill-guy-meme.vercel.app',
-    categories: ['Product'],
+    categories: ['Product', 'Web'],
     featured: false,
   },
 ]
