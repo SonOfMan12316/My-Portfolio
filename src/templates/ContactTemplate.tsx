@@ -3,11 +3,13 @@ import SectionTemplate from "./SectionTemplate";
 import TitleAndSubtitleSection from "@/app/components/molecules/TitleAndSubtitleSection";
 import Form from "@/app/components/organisms/Form";
 import HighlightText from "@/app/components/atoms/HighlightText";
+import { PAGE_CONTAINER } from "@/utils/classNames";
 
 export default function ContactTemplate() {
   return (
     <PageLayout>
       <SectionTemplate>
+        <div className={PAGE_CONTAINER}>
         <TitleAndSubtitleSection
           title="Do you like my work?"
           subtitle={
@@ -26,6 +28,7 @@ export default function ContactTemplate() {
             <Form />
           </div>
         </TitleAndSubtitleSection>
+        </div>
       </SectionTemplate>
     </PageLayout>
   );

@@ -23,7 +23,8 @@ export const projects = [
       'Redis',
       'Firebase',
     ],
-    image: '/projects/kinnected.svg',
+    image:
+      'https://res.cloudinary.com/dolawuzw6/video/upload/so_0,f_jpg,q_auto/v1782310277/Kinnected_jegccg.jpg',
     video:
       'https://res.cloudinary.com/dolawuzw6/video/upload/v1782310277/Kinnected_jegccg.mp4',
     link: '',

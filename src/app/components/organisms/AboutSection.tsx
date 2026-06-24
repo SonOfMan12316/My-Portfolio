@@ -1,11 +1,12 @@
 import SectionTemplate from '@/templates/SectionTemplate'
 import Title from '../atoms/Title'
 import Subtitle from '../atoms/Subtitle'
+import { PAGE_CONTAINER } from '@/utils/classNames'
 
 export default function AboutSection() {
   return (
     <SectionTemplate id="about" className="min-h-0 pt-10 sm:pt-14">
-      <div className="w-full mx-auto max-w-[1160px]">
+      <div className={PAGE_CONTAINER}>
         <div className="max-w-3xl">
           <Title className="text-left">About</Title>
           <Subtitle className="pt-6 text-left">
