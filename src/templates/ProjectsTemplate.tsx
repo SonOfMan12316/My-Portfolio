@@ -8,11 +8,17 @@ import DATA from "@/data";
 import Project from "@/app/components/molecules/Project";
 import CTASection from "@/app/components/organisms/ContactSection";
 import FiltersBar from "@/app/components/organisms/FiltersBar";
+import ProjectFilterTabs from "@/app/components/molecules/ProjectFilterTabs";
 import { useMemo } from "react";
 import { ProjectInterface } from "@/data/project";
 import { motion, AnimatePresence } from "motion/react";
 import AnimatedComponent from "@/app/components/molecules/AnimatedComponent";
 import HighlightText from "@/app/components/atoms/HighlightText";
+import {
+  ProjectFilterTab,
+  filterProjectsByTab,
+} from "@/utils/projectFilters";
+import { PAGE_CONTAINER } from "@/utils/classNames";
 
 const createLabelValueObject = (labels: Array<string> | Set<string>) => {
   const labelsArray = [{ label: "All", value: "" }];
@@ -31,15 +37,6 @@ export default function ProjectsTemplate() {
 
   const filters = [
     {
-      key: "categories",
-      options: [
-        { label: "All", value: "" },
-        { label: "Featured", value: "Featured" },
-        { label: "Production", value: "Production" },
-        { label: "Product", value: "Product" },
-      ],
-    },
-    {
       key: "technologies",
       options: createLabelValueObject(technologies),
     },
@@ -50,6 +47,7 @@ export default function ProjectsTemplate() {
     return acc;
   }, {} as Record<string, string>);
   const [filterState, setFilterState] = useState(initialFilterState);
+  const [activeTab, setActiveTab] = useState<ProjectFilterTab>("All");
   const filtersKeys = filters.map(({ key }) => key as keyof ProjectInterface);
 
   const handleFilterChange = (label: string, value: string) => {
@@ -60,7 +58,7 @@ export default function ProjectsTemplate() {
   };
 
   const projectsView = useMemo(() => {
-    let filteredProjects = [...DATA.projects];
+    let filteredProjects = filterProjectsByTab([...DATA.projects], activeTab);
 
     filtersKeys.forEach((key) => {
       const filterValue = filterState[key];
@@ -77,11 +75,12 @@ export default function ProjectsTemplate() {
     });
 
     return filteredProjects;
-  }, [filterState, filtersKeys]);
+  }, [filterState, filtersKeys, activeTab]);
 
   return (
     <PageLayout>
       <SectionTemplate className="rounded-b-2xl">
+        <div className={PAGE_CONTAINER}>
         <TitleAndSubtitleSection
           title="Projects"
           subtitle={
@@ -94,6 +93,8 @@ export default function ProjectsTemplate() {
           }
           className="my-16 sm:mt-28 sm:mb-12"
         >
+          <ProjectFilterTabs active={activeTab} onChange={setActiveTab} />
+
           <div className="w-full flex justify-center">
             <FiltersBar filters={filters} onChange={handleFilterChange} />
           </div>
@@ -138,6 +139,7 @@ export default function ProjectsTemplate() {
             </AnimatedComponent>
           )}
         </TitleAndSubtitleSection>
+        </div>
       </SectionTemplate>
       <CTASection />
     </PageLayout>

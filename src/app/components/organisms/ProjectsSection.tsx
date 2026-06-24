@@ -1,8 +1,9 @@
-import ProjectsPreview from './ProjectsPreview'
+import ProjectsWorkSection from './ProjectsWorkSection'
 import TitleAndSubtitleSection from '../molecules/TitleAndSubtitleSection'
 import SectionTemplate from '@/templates/SectionTemplate'
 import DATA from '@/data'
 import HighlightText from '../atoms/HighlightText'
+import { PAGE_CONTAINER } from '@/utils/classNames'
 
 export default function ProjectsSection() {
   const projects = DATA.projects
@@ -12,7 +13,7 @@ export default function ProjectsSection() {
       id="projects"
       className="flex flex-col items-center pt-10 sm:pt-14"
     >
-      <div className="w-full mx-auto max-w-[1160px]">
+      <div className={PAGE_CONTAINER}>
         <TitleAndSubtitleSection
           title="Selected Work"
           subtitle={
@@ -23,7 +24,7 @@ export default function ProjectsSection() {
             </>
           }
         >
-          <ProjectsPreview projects={projects} />
+          <ProjectsWorkSection projects={projects} />
         </TitleAndSubtitleSection>
       </div>
     </SectionTemplate>
