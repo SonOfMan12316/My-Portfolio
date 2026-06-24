@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import InitialLoadScreen from './components/molecules/InitialLoadScreen'
+import Script from 'next/script'
 
 const poppinsSans = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -12,24 +13,27 @@ const poppinsSans = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Emanyo Charles - Senior Frontend Engineer',
+    default: 'Emanyo Charles - Full Stack & Mobile Engineer',
     template: '%s | Emanyo Charles',
   },
   description:
-    'Senior Frontend Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
+    'Full Stack & Mobile Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
   authors: [
     { name: 'Emanyo Charles', url: 'https://emanyo-charles.vercel.app/' },
   ],
   creator: 'Emanyo Charles',
   publisher: 'Emanyo Charles',
   metadataBase: new URL('https://emanyo-charles.vercel.app/'),
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,
   },
   keywords: [
     'Emanyo Charles',
-    'Senior Frontend Engineer',
+    'Full Stack & Mobile Engineer',
     'Software Engineer',
     'Fullstack Engineer',
     'Cross-platform Mobile Engineer',
@@ -47,13 +51,19 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      'Emanyo Charles - Senior Frontend Engineer',
+      'Emanyo Charles - Full Stack & Mobile Engineer',
     description:
-      'Senior Frontend Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
+      'Full Stack & Mobile Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
     url: 'https://emanyo-charles.vercel.app/',
     siteName: 'Emanyo Charles',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Emanyo Charles - Full Stack & Mobile Engineer',
+    description:
+      'Full Stack & Mobile Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
   },
   icons: {
     icon: '/favicon.ico',
@@ -69,9 +79,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Emanyo Charles',
+    url: 'https://emanyo-charles.vercel.app/',
+    jobTitle: 'Full Stack & Mobile Engineer',
+    sameAs: [
+      'https://github.com/SonOfMan12316',
+      'https://www.linkedin.com/in/charles-emanyo-a56457233',
+      'https://x.com/mancyDev',
+    ],
+  }
+
   return (
     <html lang="en">
       <body className={`${poppinsSans.variable} antialiased`}>
+        <Script
+          id="person-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <InitialLoadScreen />
         <Toaster position="bottom-center" toastOptions={{ duration: 5000 }} />
         {children}
