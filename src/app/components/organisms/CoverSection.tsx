@@ -16,13 +16,14 @@ export default function CoverSection() {
               Full Stack & Mobile Engineer
             </p>
             <Title className="text-left text-[clamp(2rem,9vw,4.5rem)] font-extrabold leading-[1.1] sm:leading-[1.08]">
-              I build scalable React & TypeScript products used in production
+              I join teams to make them faster and more reliable.
             </Title>
             <p className="pt-5 sm:pt-6 text-[15px] sm:text-lg leading-7 sm:leading-8 text-gray-200/85 max-w-2xl">
-              Software Engineer with 5+ years of experience shipping
-              high-performance web applications and fullstack systems. I focus
-              on clean architecture, performance, and intuitive user
-              experiences.
+              Over the last five years, I&apos;ve shipped cross-platform
+              products, improved how quickly systems respond to users, and
+              helped keep services consistently available. I lead by example
+              code reviews, pair programming, and protecting the team
+              from burnout.
             </p>
           </div>
         </div>

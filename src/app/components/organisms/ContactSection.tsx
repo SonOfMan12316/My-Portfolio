@@ -44,7 +44,7 @@ export default function CTASection() {
             <Title className="text-left">Contact</Title>
             <Subtitle className="pt-4 text-left max-w-2xl">
               I&apos;m open to frontend, fullstack, and cross-platform mobile
-              opportunities - feel free to reach out.
+              opportunities feel free to reach out.
             </Subtitle>
             <div className="pt-7 flex items-center gap-5">
               {contactLinks.map(({ label, href, icon: Icon }) => (
