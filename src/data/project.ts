@@ -4,6 +4,7 @@ export interface ProjectInterface {
   technologies: Array<string>
   image: string
   link: string
+  github?: string
   categories: Array<string>
   featured?: boolean
   liveOnMobile?: boolean
@@ -60,7 +61,8 @@ export const projects = [
       'SQL',
     ],
     image: '/projects/bookmark-manager.webp',
-    link: 'https://bookmark-manager-woad.vercel.app',
+    link: 'https://bookmark-manager-woad.vercel.app/sign-in',
+    github: 'https://github.com/SonOfMan12316/Bookmark-Manager',
     categories: ['Product', 'Web', 'Full Stack'],
     featured: false,
   },
@@ -77,7 +79,8 @@ export const projects = [
       'Zustand',
     ],
     image: '/projects/finance-tracker.webp',
-    link: 'https://mancy-finance-tracker.vercel.app',
+    link: 'https://mancy-finance-tracker.vercel.app/sign-in',
+    github: 'https://github.com/SonOfMan12316/Finance-Tracker',
     categories: ['Product', 'Web', 'Full Stack'],
     featured: false,
   },
