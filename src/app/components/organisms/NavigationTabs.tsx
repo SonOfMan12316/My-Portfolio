@@ -10,6 +10,7 @@ export const NAVIGATION_TAB_INDEX: Record<string, string> = {
   HOME: 'home',
   WORK: 'projects',
   ABOUT: 'about',
+  BLOG: 'blog',
   CONTACT: 'contact',
 }
 
@@ -21,6 +22,7 @@ const tabsList = [
   { id: NAVIGATION_TAB_INDEX.HOME, label: 'Home' },
   { id: NAVIGATION_TAB_INDEX.WORK, label: 'Work' },
   { id: NAVIGATION_TAB_INDEX.ABOUT, label: 'About' },
+  { id: NAVIGATION_TAB_INDEX.BLOG, label: 'Blog' },
   { id: NAVIGATION_TAB_INDEX.CONTACT, label: 'Contact' },
 ]
 

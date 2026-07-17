@@ -2,6 +2,7 @@ import PageLayout from '@/layouts/PageLayout'
 import CoverSection from '../app/components/organisms/CoverSection'
 import AboutSection from '@/app/components/organisms/AboutSection'
 import ProjectsSection from '@/app/components/organisms/ProjectsSection'
+import BlogSection from '@/app/components/organisms/BlogSection'
 import ContactSection from '@/app/components/organisms/ContactSection'
 
 export default function HomeTemplate() {
@@ -10,6 +11,7 @@ export default function HomeTemplate() {
       <CoverSection />
       <ProjectsSection />
       <AboutSection />
+      <BlogSection />
       <ContactSection />
     </PageLayout>
   )
