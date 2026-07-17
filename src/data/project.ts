@@ -15,7 +15,7 @@ export const projects = [
   {
     title: 'Kinnected',
     about:
-      'A family management platform built from zero to production as the sole engineer. Kinnected gives families one private space to manage meals, tasks, shopping lists, calendars, and shared files. I owned the entire stack — NestJS backend serving 5,000+ users at 50K+ daily requests, Redis caching reducing response times by 45%, Firebase Auth, real-time push notifications, and a React Native mobile app shipped to both the Apple App Store and Google Play Store.',
+      'Kinnected is a family management platform I built solo from zero to production. Families use it to organize meals, tasks, shopping, calendars, and files. I handled everything the backend, the mobile app (iOS and Android), and making sure it stayed fast and reliable for 1,000+ users.',
     technologies: [
       'React Native',
       'NestJS',
@@ -36,7 +36,7 @@ export const projects = [
   {
     title: 'Clohea Admin Portal',
     about:
-      'Built for a healthcare company managing staff, groups, and practitioner verification across an organization. The challenge was handling complex role-based permissions while keeping the UI intuitive for non-technical admin staff. Built with Vue 3, VueX, and TypeScript, focused on component reusability and clean state management.',
+      'Clohea is an admin portal I built for a healthcare company. Staff use it to manage practitioners and verify credentials. The tricky part was making sure different user types saw only what they needed built with Vue and TypeScript.',
     technologies: [
       'Vue3',
       'VueX',
@@ -51,7 +51,7 @@ export const projects = [
   {
     title: 'Bookmark Manager',
     about:
-      'A full-stack productivity tool with authentication, built to scratch my own itch. Users can add, edit, archive, and delete bookmarks across sessions. Built with React, Next.js, NestJS, and SQL, this was my playground for getting serious about backend integration, database design, and auth flows end to end.',
+      'A bookmark manager I built because I kept losing links across devices. Save, tag, search, and filter bookmarks from anywhere backend syncs everything so nothing gets lost.',
     technologies: [
       'React',
       'Next',
@@ -69,7 +69,7 @@ export const projects = [
   {
     title: 'Finance Tracker',
     about:
-      'Personal finance app for tracking budgets, pots, and transactions in real time. The goal was to make financial data feel less intimidating through clean UI and clear data visualization. Built with React, Zustand for state, Firebase for backend, and TypeScript throughout.',
+      'A personal finance app for tracking budgets and transactions. Real-time updates, clean dashboard, and the whole thing syncs with Firebase so I can check it anywhere.',
     technologies: [
       'React',
       'Vite',
