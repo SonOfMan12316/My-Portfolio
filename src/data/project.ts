@@ -1,6 +1,10 @@
 export interface ProjectInterface {
   title: string
   about: string
+  /** Short caption for the work tile; falls back to the first sentence of `about`. */
+  tagline?: string
+  /** Shape of the tile media. Inferred from the mobile flags when omitted. */
+  orientation?: 'landscape' | 'portrait'
   technologies: Array<string>
   image: string
   link: string
