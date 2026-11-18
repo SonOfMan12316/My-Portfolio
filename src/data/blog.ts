@@ -10,7 +10,7 @@ export const blogPosts: Array<BlogPostInterface> = [
   {
     title: "Why I'm Learning Go as a TypeScript Developer",
     excerpt:
-      'After five years of React and NestJS, I wanted a language that forces simplicity. Here is what Go is teaching me about building systems that are fast and easy to maintain.',
+      'After six years of React and NestJS, I wanted a language that forces simplicity. Here is what Go is teaching me about building systems that are fast and easy to maintain.',
     date: '2026-07-01',
     link: '',
   },
