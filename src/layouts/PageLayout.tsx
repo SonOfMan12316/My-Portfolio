@@ -1,8 +1,6 @@
 import PageTemplate from '@/templates/PageTemplate'
-import BackgroundBlur from '@/app/components/molecules/BackgroundBlur'
-import BackToTopButton from '@/app/components/organisms/BackToTopButton'
-import ScrollProgress from '@/app/components/organisms/ScrollProgress'
-import CustomCursor from '@/app/components/organisms/CustomCursor'
+import Header from '@/app/components/organisms/Header'
+import DotField from '@/app/components/motion/DotField'
 
 export default function PageLayout({
   children,
@@ -10,12 +8,13 @@ export default function PageLayout({
   children: React.ReactNode
 }) {
   return (
-    <PageTemplate>
+    <PageTemplate className="st-page">
+      <a href="#work" className="skip-link">
+        Skip to content
+      </a>
+      <DotField />
+      <Header />
       {children}
-      <BackgroundBlur />
-      <ScrollProgress />
-      <CustomCursor />
-      <BackToTopButton />
     </PageTemplate>
   )
 }
