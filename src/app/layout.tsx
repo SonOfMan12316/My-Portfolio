@@ -1,16 +1,8 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
-import InitialLoadScreen from './components/molecules/InitialLoadScreen'
 import Script from 'next/script'
-
-const playfair = Playfair_Display({
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-playfair',
-  subsets: ['latin'],
-  display: 'swap',
-})
 
 const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
@@ -21,11 +13,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Emanyo Charles — Full Stack & Mobile Engineer',
+    default: 'Emanyo Charles — Senior Software Engineer',
     template: '%s | Emanyo Charles',
   },
   description:
-    'Full Stack & Mobile Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
+    'Senior Software Engineer with 6+ years of experience building production-grade React and TypeScript products, backend systems, and cross-platform mobile apps.',
   authors: [
     { name: 'Emanyo Charles', url: 'https://emanyo-charles.vercel.app/' },
   ],
@@ -41,9 +33,9 @@ export const metadata: Metadata = {
   },
   keywords: [
     'Emanyo Charles',
-    'Full Stack & Mobile Engineer',
+    'Senior Software Engineer',
     'Software Engineer',
-    'Fullstack Engineer',
+    'Full Stack Engineer',
     'Cross-platform Mobile Engineer',
     'React',
     'TypeScript',
@@ -58,9 +50,9 @@ export const metadata: Metadata = {
     'Developer Portfolio',
   ],
   openGraph: {
-    title: 'Emanyo Charles — Full Stack & Mobile Engineer',
+    title: 'Emanyo Charles — Senior Software Engineer',
     description:
-      'Full Stack & Mobile Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
+      'Senior Software Engineer with 6+ years of experience building production-grade React and TypeScript products, backend systems, and cross-platform mobile apps.',
     url: 'https://emanyo-charles.vercel.app/',
     siteName: 'Emanyo Charles',
     locale: 'en_US',
@@ -68,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Emanyo Charles — Full Stack & Mobile Engineer',
+    title: 'Emanyo Charles — Senior Software Engineer',
     description:
-      'Full Stack & Mobile Engineer with 5+ years of experience building production-grade React and TypeScript products, fullstack systems, and cross-platform mobile apps.',
+      'Senior Software Engineer with 6+ years of experience building production-grade React and TypeScript products, backend systems, and cross-platform mobile apps.',
   },
   icons: {
     icon: '/favicon.ico',
@@ -91,7 +83,7 @@ export default function RootLayout({
     '@type': 'Person',
     name: 'Emanyo Charles',
     url: 'https://emanyo-charles.vercel.app/',
-    jobTitle: 'Full Stack & Mobile Engineer',
+    jobTitle: 'Senior Software Engineer',
     sameAs: [
       'https://github.com/SonOfMan12316',
       'https://www.linkedin.com/in/charles-emanyo-a56457233',
@@ -100,14 +92,38 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* The hero is set in General Sans, so fetch it with the document
+            rather than after CSS parses — otherwise the justified wordmark
+            lays out in a fallback face first and visibly re-flows. */}
+        <link
+          rel="preload"
+          href="/fonts/general-sans-500.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/general-sans-400.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className={`${inter.variable} antialiased`}>
+        <script
+          id="st-boot"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var r=document.documentElement;r.setAttribute('data-js','');try{if(!sessionStorage.getItem('intro'))r.setAttribute('data-intro','play')}catch(e){}requestAnimationFrame(function(){requestAnimationFrame(function(){r.setAttribute('data-js','live')})})})();`,
+          }}
+        />
         <Script
           id="person-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <InitialLoadScreen />
         <Toaster position="bottom-center" toastOptions={{ duration: 5000 }} />
         {children}
       </body>
